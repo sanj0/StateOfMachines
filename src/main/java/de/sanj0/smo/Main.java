@@ -24,7 +24,9 @@ public class Main {
             final Scanner stdin = new Scanner(System.in);
             String in = stdin.nextLine();
             while (!in.equalsIgnoreCase("exit") && !in.equalsIgnoreCase("quit")) {
-                if (stateMachine.test(in)) {
+                if (in.equals(".gen")) {
+                    System.out.println(stateMachine.generateRandom());
+                } else if (stateMachine.test(in)) {
                     System.out.println("pass!");
                 } else {
                     System.err.println("no pass!");
